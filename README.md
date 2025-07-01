@@ -1,108 +1,108 @@
-SIMULACIÓN CONCURRENTE DE PROCESAMIENTO DE PEDIDOS
+CONCURRENT ORDER PROCESSING SIMULATION
 
-Este proyecto implementa una simulación concurrente en Python para procesar pedidos de una tienda de juguetes, utilizando múltiples hilos de ejecución. Está diseñado como ejercicio práctico para demostrar competencias en programación concurrente, sincronización de hilos, manejo de colas y registros de logs.
-
-----------------------------------------
-DESCRIPCIÓN
-----------------------------------------
-
-- CONTEXTO:
-  Simula un escenario real en el que una tienda recibe hasta 1,000 pedidos de clientes, los cuales son procesados por un equipo de empleados (threads) de forma concurrente.
-
-- OBJETIVO:
-  Gestionar pedidos concurrentes, actualizando un inventario de productos, asegurando la integridad de los datos mediante mecanismos de sincronización y generando logs tanto en archivo de texto como mediante el módulo logging.
+This project implements a concurrent simulation in Python to process orders for a toy store, using multiple execution threads. It’s designed as a practical exercise to demonstrate skills in concurrent programming, thread synchronization, queue handling, and logging.
 
 ----------------------------------------
-CARACTERÍSTICAS
+DESCRIPTION
 ----------------------------------------
 
-✅ Programación Concurrente:
-- Uso de ThreadPoolExecutor para manejar un pool de hasta 10 empleados (threads) procesando pedidos en paralelo.
-- Semáforo (Semaphore) que limita a máximo 5 empleados trabajando de forma simultánea.
+- CONTEXT:
+  Simulates a real-world scenario in which a toy store receives up to 1,000 orders from customers, which are processed concurrently by a team of employees (threads).
 
-✅ Sincronización Segura:
-- Locks (Lock) para evitar condiciones de carrera al acceder o modificar el inventario y archivos compartidos.
+- OBJECTIVE:
+  Manage concurrent order processing, updating a product inventory, ensuring data integrity through synchronization mechanisms, and generating logs both in a text file and via the logging module.
 
-✅ Colas Concurrentes:
-- Implementación de queue.Queue para la comunicación segura entre productores (clientes) y consumidores (empleados).
+----------------------------------------
+FEATURES
+----------------------------------------
 
-✅ Registro de Logs:
-- Guardado de resultados de pedidos en:
-  - Archivo de texto plano (pedidos.txt) con timestamp.
-  - Archivo de log estructurado (log_pedidos.txt) usando el módulo logging.
+✅ Concurrent Programming:
+- Uses ThreadPoolExecutor to manage a pool of up to 10 employee threads processing orders in parallel.
+- Semaphore limits the number of simultaneously active employees to 5.
 
-✅ Manejo de Inventario:
-- Inventario inicial de distintos juguetes.
-- Control de existencias para aceptar o rechazar pedidos según disponibilidad.
+✅ Safe Synchronization:
+- Lock objects prevent race conditions when accessing or modifying shared resources like inventory and files.
+
+✅ Concurrent Queues:
+- Implements queue.Queue for safe communication between producers (clients) and consumers (employees).
+
+✅ Logging:
+- Logs the result of each order in:
+  - A plain text file (pedidos.txt) with timestamps.
+  - A structured log file (log_pedidos.txt) via the logging module.
+
+✅ Inventory Management:
+- Initial inventory of various toys.
+- Controls stock levels to accept or reject orders based on availability.
 
 ✅ Performance Tracking:
-- Medición de tiempo total de la simulación.
+- Measures the total simulation time.
 
 ----------------------------------------
-REQUISITOS
+REQUIREMENTS
 ----------------------------------------
 
 - Python 3.8+
-- No requiere librerías externas adicionales (solo módulos estándar).
+- No external libraries required (only Python standard modules).
 
 ----------------------------------------
-CÓMO EJECUTAR
+HOW TO RUN
 ----------------------------------------
 
-1. Clona el repositorio o copia el archivo .py en tu máquina local.
-2. Ejecuta el script:
+1. Clone the repository or copy the .py file to your local machine.
+2. Run the script:
 
    python simulacion_pedidos.py
 
-3. La consola mostrará:
-   - Progreso de la simulación.
-   - Inventario final después de procesar los pedidos.
+3. The console will display:
+   - Simulation progress.
+   - Final inventory status after processing all orders.
 
-4. Consulta los archivos generados:
-   - pedidos.txt: historial de pedidos aceptados o rechazados.
-   - log_pedidos.txt: logs detallados con timestamps.
+4. Check the generated files:
+   - pedidos.txt: record of accepted or rejected orders.
+   - log_pedidos.txt: detailed logs with timestamps.
 
 ----------------------------------------
-ARCHIVOS GENERADOS
+GENERATED FILES
 ----------------------------------------
 
 - pedidos.txt
-  Registra cada pedido procesado, indicando si fue aceptado o rechazado, junto con fecha y hora.
+  Records each processed order, indicating whether it was accepted or rejected, along with the date and time.
 
 - log_pedidos.txt
-  Contiene logs estructurados generados mediante logging.
+  Contains structured logs generated using Python’s logging module.
 
 ----------------------------------------
-EJEMPLO DE EJECUCIÓN
+EXAMPLE OUTPUT
 ----------------------------------------
 
-Iniciando simulación con 1000 pedidos y 10 empleados...
-Simulación completada en 2.84 segundos.
+Starting simulation with 1000 orders and 10 employees...
+Simulation completed in 2.84 seconds.
 
-Inventario Final:
+Final Inventory:
 pelota: 29
 muñeca: 18
 carro: 37
 lego: 14
 
 ----------------------------------------
-HABILIDADES DEMOSTRADAS
+SKILLS DEMONSTRATED
 ----------------------------------------
 
-- Programación concurrente en Python.
-- Sincronización de threads mediante Locks y Semáforos.
-- Manejo eficiente de colas de trabajo.
-- Logging estructurado y persistencia de registros.
-- Simulación de escenarios de alta concurrencia.
-- Optimización de procesos multithread.
+- Concurrent programming in Python.
+- Thread synchronization using Locks and Semaphores.
+- Efficient queue handling for task processing.
+- Structured logging and persistent recordkeeping.
+- Simulation of high-concurrency scenarios.
+- Optimization of multithreaded processes.
 
 ----------------------------------------
-AUTOR
+AUTHOR
 ----------------------------------------
 
 Diego Emiliano Santana Madrid
-Desarrollador Python | Programación Concurrente | Simulación de Procesos
+Python Developer | Concurrent Programming | Process Simulation
 
-Correo: diegosantanaccuma@gmail.com
-Teléfono: 5626383539
+Email: diegosantanaccuma@gmail.com
+Phone: 5626383539
 LinkedIn: https://www.linkedin.com/in/diego-emiliano-santana-madrid-a5080123a/
